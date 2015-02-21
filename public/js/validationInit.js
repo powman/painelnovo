@@ -1,0 +1,1 @@
+﻿$('[data-validation=true]').validationEngine();

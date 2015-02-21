@@ -1,0 +1,56 @@
+
+
+
+
+<div>
+	<div class="jumbotron">
+		<div>
+			<div class="table-responsive" style="padding: 30px;">
+				<div>
+				    <div class="container">
+				        <a href="#" class="btn btn-block btn-md btn-primary modalDePesquisa" data-url="<?php echo $this->baseUrl();?>/default/logs/pesquisar" data-toggle="tooltip" title="Filtra os resultados"><span class="glyphicon glyphicon-arrow-right"></span> FILTRAR RESULTADOS</a>
+				    </div>
+				</div>
+				<table id="tblflat" class="table table-hover table-striped"
+					width="100%" data-toggle="table" data-show-refresh="true"
+					data-side-pagination="server"
+					exportTypes="['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf']"
+					data-url="<?php echo $this->baseUrl();?>/default/logs/get"
+					data-show-export="true" data-show-columns="true"
+					data-show-toggle="true" data-show-export="true"
+					data-pagination="true">
+					<thead>
+						<tr>
+							<th data-field="id" data-align="center" data-sortable="true">Id</th>
+                			<th data-field="ctrl" data-align="center" data-sortable="true">Controle</th>
+                			<th data-field="ip" data-align="center" data-sortable="true">Ip</th>
+                			<th data-field="data" data-align="center" data-sortable="true">Data</th>
+                			<th data-field="usuario_id" data-align="center" data-sortable="true">Id do Usuário</th>
+                			<th data-field="usuario_nome" data-align="center" data-sortable="true">Nome do Usuário</th>
+                			<th data-field="descricao" data-align="center" data-sortable="true">Descrição</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<link href="<?php echo $this->baseUrl($this->cssHelper);?>"
+	media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript"
+	src="<?php echo $this->baseUrl($this->jsHelper)?>"></script>
+
+
+
+<div class="modal fade forget-modal-all" tabindex="-1" role="dialog"
+	aria-labelledby="myForgetModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content"></div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+

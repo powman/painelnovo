@@ -1,0 +1,96 @@
+<link href="<?php echo $this->baseUrl($this->cssHelper) ;?>"
+	media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript"
+	src="<?php echo $this->baseUrl($this->jsHelper)?>"></script>
+	
+<div class="container">
+	<div class="jumbotron">
+		<div class="row">
+		<div class="col-md-12 col-xs-12 col-sm-12">
+		    <div align="right">
+		        <a href="javascript:history.go(-1);" class="btn btn-primary">Voltar</a>
+		    </div>
+		    <form id="commentForm" action="javascript:;" class="form-horizontal cadastrarForm" data-url="<?php echo $this->baseUrl('default/usuariogrupo/editar-acao/type/json');?>">
+    		    <div id="rootwizard">
+        		    <div role="tabpanel">
+        
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li><a href="#home" data-toggle="tab">Grupo de usuários</a></li>
+                        <li><a href="#permissao" data-toggle="tab">Permissão</a></li>
+                      </ul>
+                      <ul class="pager wizard">
+                        <li class="previous first" style="display:none;"><a href="#">Primeiro</a></li>
+                        <li class="previous"><a href="#">Anterior</a></li>
+                        <li class="next last" style="display:none;"><a href="#">Último</a></li>
+                        <li class="next"><a href="javascript:;">Próximo</a></li>
+                      </ul>
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div class="tab-pane" id="home">
+                            <div class="row" style="padding: 10px 0px;">
+                        
+                                <!-- Text input-->
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label" for="nomeForm">Nome</label>  
+                                  <div class="col-md-6">
+                                  <input id="nomeForm" name="role" class="form-control input-md required" required type="text" value="<?php echo $this->usuario_grupo['role']?>">
+                                  <input type="hidden" name="id" id="idForm" value="<?php echo $this->usuario_grupo['id'];?>"/>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="permissao">
+                            <div class="row" style="padding: 10px 0px;">
+                                <ul class="list-group">
+                                      <li class="list-group-item">
+                                        <span class="badge"><input name="selecionartodos" class="selecionarTodos" id="selecionarTodos" type="checkbox"></span>
+                                        <strong>SELECIONAR TODOS</strong>
+                                      </li>
+                                      <?php foreach ($this->resources as $value):?>
+                                      <li class="list-group-item">
+                                        <span class="badge"><input name="selecionartodos" data-grupo="<?php echo $value['resource'];?>" class="selecionarTodosGrupo" type="checkbox"></span>
+                                        <strong>SELECIONAR GRUPO <?php echo strtoupper($value['resource']);?></strong>
+                                      </li>
+                                      <?php endforeach;?>
+                                    <?php 
+                                    foreach ($this->permissaousuario as $value):
+                                        $aNewArray[] = array($value['permissao'],$value['resource_id']);
+                                    endforeach;
+                                    foreach ($this->permissao as $value):
+                                    ?>
+                                      <li class="list-group-item">
+                                        <span class="badge"><input name="permissao[]" <?php echo in_array(array($value['permissao'],$value['resource_id']), $aNewArray) ? 'checked="checked"' : ""; ?> type="checkbox" class="checkbox1<?php echo $value['controle'];?> checkbox1" value="<?php echo $this->role_id;?>,<?php echo $value['resource_id'];?>,<?php echo $value['permissao'];?>"></span>
+                                        <strong>Controle:</strong> <?php echo strtoupper($value['controle']);?><br/> <strong>Permissão:</strong> <?php echo strtoupper($value['permissao']);?>
+                                      </li>
+                                        
+                                    <?php endforeach;?>
+                                </ul>
+                            </div>
+                            <div class="row" style="padding: 10px 0px;">
+                    			<div class="col-md-12 col-xs-12 col-sm-12">
+                    				<div align="center" style="padding-top: 10px;">
+                    					<a href="javascript:;" class="btn btn-primary cadastrarBotao">Alterar</a>
+                    				</div>
+                    			</div>
+                    		</div>
+                        </div>
+                        <ul class="pager wizard">
+                        <li class="previous first" style="display:none;"><a href="#">Primeiro</a></li>
+                        <li class="previous"><a href="#">Anterior</a></li>
+                        <li class="next last" style="display:none;"><a href="#">Último</a></li>
+                        <li class="next"><a href="javascript:;">Próximo</a></li>
+                        </ul>
+                      </div>
+                    
+                    </div>
+                </div>
+            </form>
+		
+		    
+		</div>    
+		</div>
+		
+
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="text-center">
+    <!-- <img src="<?php echo $this->baseUrl('img/logo.png');?>" id="logoimg" alt=" Logo" />  -->
+</div>
+<div class="tab-content">
+    <div id="login" data-validation='true' class="tab-pane active">
+        <form action="<?php echo $this->url(array('controller' => 'index', 'action' => 'logar', 'module' => 'login'));?>" class="form-signin" method="post">
+            <p class="text-muted text-center btn-block btn btn-primary btn-rect">Painel Administrativo</p>
+            <input type="text" placeholder="E-mail" class="form-control validate[required,custom[email]]" name="email"/>
+            <input type="password" placeholder="Senha" class="form-control validate[required]" name="senha"/>
+            <button class="btn text-muted text-center btn-danger btn-block" type="submit">Logar</button>
+        </form>
+    </div>
+    <div id="forgot" class="tab-pane">
+        <form action="<?php echo $this->url(array('controller' => 'index', 'action' => 'recuperar', 'module' => 'login'));?>" method="post" class="form-signin">
+            <p class="text-muted text-center btn-block btn btn-primary btn-rect">Recuperar Senha</p>
+            <input type="email" required="required" name="recuperaremail" placeholder="E-mail"  class="form-control" />
+            <br />
+            <button class="btn text-muted text-center btn-success btn-block" type="submit">Recuperar senha</button>
+        </form>
+    </div>
+</div>
+<div class="text-center">
+    <ul class="list-inline">
+        <li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
+        <li><a class="text-muted" href="#forgot" data-toggle="tab">Recuperar senha</a></li>
+    </ul>
+</div>
