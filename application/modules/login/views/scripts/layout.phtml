@@ -1,3 +1,6 @@
+<?php 
+
+/*
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -57,3 +60,60 @@
 </body>
     <!-- END BODY -->
 </html>
+
+*/
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>PAINEL ADMINISTRATIVO</title>
+    
+    <script src="<?php echo $this->baseUrl('js/jquery-1.11.2.min.js');?>"></script>
+    <script src="<?php echo $this->baseUrl('js/jquery-migrate-1.2.1.min.js');?>"></script>
+    <script src="<?php echo $this->baseUrl('js/plugins/validationengine/js/languages/jquery.validationEngine-pt_BR.js');?>"></script>
+    <script src="<?php echo $this->baseUrl('js/plugins/validationengine/js/jquery.validationEngine.js');?>"></script>
+    <script src="<?php echo $this->baseUrl('js/bootstrap-checkbox.js');?>"></script>
+    <script src="<?php echo $this->baseUrl('js/scripts.js');?>"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo $this->baseUrl('css/bootstrap.css');?>" rel="stylesheet"/>
+    <link href="<?php echo $this->baseUrl('js/plugins/animate/animate.min.css');?>" rel="stylesheet"/>
+    <link href="<?php echo $this->baseUrl('css/bootstrap-checkbox.css');?>" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php echo $this->baseUrl('js/plugins/validationengine/css/validationEngine.jquery.css');?>" />
+    <!-- Custom styles for this template -->
+    <link href="<?php echo $this->baseUrl('css/signin.css');?>" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+    <div id="message_box">
+        <?php echo $this->flashMessenger(); ?>
+    </div>
+
+      
+      <?php echo $this->layout()->content; ?>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+

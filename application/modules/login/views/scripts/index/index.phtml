@@ -1,3 +1,6 @@
+<?php 
+
+/*
 <div class="text-center">
     <!-- <img src="<?php echo $this->baseUrl('img/logo.png');?>" id="logoimg" alt=" Logo" />  -->
 </div>
@@ -25,3 +28,65 @@
         <li><a class="text-muted" href="#forgot" data-toggle="tab">Recuperar senha</a></li>
     </ul>
 </div>
+
+*/
+
+?>
+
+
+<div class="row" style="display: none;">
+    <div class="col-md-12 col-xs-12 col-sm-12" align="center">
+        <img src="<?php echo $this->baseUrl('img/logo.png');?>" id="logoimg" style="width: 150px;" alt=" Logo" />
+    </div>
+    
+</div>
+<div class="row bounceIn" id="login">
+    <form data-validation="true" action="<?php echo $this->url(array('controller' => 'index', 'action' => 'logar', 'module' => 'login'));?>" class="form-signin" method="post">
+    <h2 class="form-signin-heading">Painel Administrativo</h2>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="email" id="inputEmail" class="form-control validate[required,custom[email]]" name="email" placeholder="Email">
+    <label for="inputPassword" class="sr-only">Senha</label>
+    <input type="password" name="senha" id="inputPassword" class="form-control validate[required]" placeholder="Senha">
+    
+    <!--  <div class="checkbox">
+      <label style="padding-left: 0px;">
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div> -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>
+    </form>
+</div>
+<div class="row bounceIn" id="esqueciSenha">
+    <form data-validation="true" action="<?php echo $this->url(array('controller' => 'index', 'action' => 'recuperar', 'module' => 'login'));?>" class="form-signin" method="post">
+    <h2 class="form-signin-heading">Recuperar Senha</h2>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="email" id="recuperaremail" class="form-control validate[required,custom[email]]" name="recuperaremail" placeholder="Email">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+    </form>
+</div>
+<div class="text-center">
+    <ul class="list-inline">
+        <li><a class="text-muted" id="loginPanel" href="#login">Login</a></li>
+        <li><a class="text-muted" id="senhaPainel" href="#forgot">Recuperar senha</a></li>
+    </ul>
+</div>
+
+<script>
+
+$(function(){
+    $('#loginPanel').click(function(){
+    	$('#esqueciSenha').animate(
+	    { opacity: 0 }, // what we are animating
+	    2000, // how fast we are animating
+	    'bounceIn', // the type of easing
+	    function() { // the callback
+	        alert('done');
+	    });
+    });
+});
+
+
+
+
+
+</script>
