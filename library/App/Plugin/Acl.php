@@ -3,7 +3,7 @@
  // http://_zend1.com/login/index/index/instalar/1
 class App_Plugin_Acl extends Zend_Controller_Plugin_Abstract
 {
-private $acl;
+public $acl;
 
 public function __construct($db)
 {

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Fev-2015 às 20:23
+-- Generation Time: 27-Mar-2015 às 21:20
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `padrao`
+-- Database: `painelnovo`
 --
 
 -- --------------------------------------------------------
@@ -115,6 +115,8 @@ INSERT INTO `membro` (`id`, `nome`, `email`, `senha`, `telefone`, `data_nascimen
 CREATE TABLE IF NOT EXISTS `modulo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) DEFAULT NULL,
+  `nome_menu` varchar(255) NOT NULL,
+  `modulo_grupo_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
@@ -123,12 +125,32 @@ CREATE TABLE IF NOT EXISTS `modulo` (
 -- Extraindo dados da tabela `modulo`
 --
 
-INSERT INTO `modulo` (`id`, `nome`) VALUES
-(61, 'default:index'),
-(62, 'default:logs'),
-(63, 'default:membro'),
-(64, 'default:usuario'),
-(65, 'default:usuariogrupo');
+INSERT INTO `modulo` (`id`, `nome`, `nome_menu`, `modulo_grupo_id`) VALUES
+(61, 'default:index', 'Home', 1),
+(62, 'default:logs', 'Logs', 0),
+(63, 'default:membro', 'Membro', 0),
+(64, 'default:usuario', 'Usuário', 1),
+(65, 'default:usuariogrupo', 'Usuário Grupo', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `modulo_grupo`
+--
+
+CREATE TABLE IF NOT EXISTS `modulo_grupo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `modulo_grupo`
+--
+
+INSERT INTO `modulo_grupo` (`id`, `nome`, `status`) VALUES
+(1, 'Usuário', 1);
 
 -- --------------------------------------------------------
 
@@ -156,6 +178,7 @@ CREATE TABLE IF NOT EXISTS `resource` (
   `resource` varchar(128) NOT NULL,
   `role_id` int(11) NOT NULL,
   `modulo_id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `resource` (`resource`),
   KEY `modulo_id` (`modulo_id`)
@@ -165,8 +188,8 @@ CREATE TABLE IF NOT EXISTS `resource` (
 -- Extraindo dados da tabela `resource`
 --
 
-INSERT INTO `resource` (`id`, `resource`, `role_id`, `modulo_id`) VALUES
-(84, 'index', 1, 61);
+INSERT INTO `resource` (`id`, `resource`, `role_id`, `modulo_id`, `nome`) VALUES
+(84, 'index', 1, 61, 'Listar');
 
 -- --------------------------------------------------------
 
@@ -215,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `senha`, `email`, `img`, `status`, `role_id`) VALUES
-(2, 'Paulo', '0de8b41d3fa97119a9057e72601a9bcb', 'paulo@pixelgo.com.br', '', 1, 1);
+(2, 'Paulo', 'bdbe3051e3908442241f74aed765e822', 'paulo@pixelgo.com.br', '', 1, 1);
 
 --
 -- Constraints for dumped tables
