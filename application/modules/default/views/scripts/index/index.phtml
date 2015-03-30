@@ -1,56 +1,48 @@
 
-
-
-
-<div>
-	<div class="jumbotron">
-		<div>
-			<div class="table-responsive" style="padding: 30px;">
-				<div>
-				    <div class="container">
-				        <a href="#" class="btn btn-block btn-md btn-primary modalDePesquisa" data-url="<?php echo $this->baseUrl();?>/default/logs/pesquisar" data-toggle="tooltip" title="Filtra os resultados"><span class="glyphicon glyphicon-arrow-right"></span> FILTRAR RESULTADOS</a>
-				    </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-xs-12 col-sm-6">
+			<div class="panel panel-success" style="min-height: 190px;">
+				<div class="panel-heading">
+					<h3 class="panel-title">Painel de Manutenção de Conteúdo</h3>
 				</div>
-				<table id="tblflat" class="table table-hover table-striped"
-					width="100%" data-toggle="table" data-show-refresh="true"
-					data-side-pagination="server"
-					exportTypes="['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf']"
-					data-url="<?php echo $this->baseUrl();?>/default/logs/get"
-					data-show-export="true" data-show-columns="true"
-					data-show-toggle="true" data-show-export="true"
-					data-pagination="true">
-					<thead>
-						<tr>
-							<th data-field="id" data-align="center" data-sortable="true">Id</th>
-                			<th data-field="ctrl" data-align="center" data-sortable="true">Controle</th>
-                			<th data-field="ip" data-align="center" data-sortable="true">Ip</th>
-                			<th data-field="data" data-align="center" data-sortable="true">Data</th>
-                			<th data-field="usuario_id" data-align="center" data-sortable="true">Id do Usuário</th>
-                			<th data-field="usuario_nome" data-align="center" data-sortable="true">Nome do Usuário</th>
-                			<th data-field="descricao" data-align="center" data-sortable="true">Descrição</th>
-						</tr>
-					</thead>
-				</table>
+				<div class="panel-body">Bem vindo ao Sistema de Atualização e
+					Manutenção de Conteúdo. Em caso de dificuldade entre em contato com
+					contato@pixelgo.com.br</div>
 			</div>
 		</div>
-
+		<div class="col-md-6 col-xs-12 col-sm-6">
+			<div class="panel panel-success" style="min-height: 190px;">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ultima Visita</h3>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive" style="background: #fff;">
+						<table class="table table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Nome</th>
+									<th>Data</th>
+									<th>Horário</th>
+									<th>Ip</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Paulo Uere</td>
+									<td>22/01/1987</td>
+									<td>15:21</td>
+									<td>192.168.7.10</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
-<link href="<?php echo $this->baseUrl($this->cssHelper);?>"
-	media="screen" rel="stylesheet" type="text/css">
-<script type="text/javascript"
-	src="<?php echo $this->baseUrl($this->jsHelper)?>"></script>
-
-
-
-<div class="modal fade forget-modal-all" tabindex="-1" role="dialog"
-	aria-labelledby="myForgetModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content"></div>
-		<!-- /.modal-content -->
-	</div>
-	<!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 

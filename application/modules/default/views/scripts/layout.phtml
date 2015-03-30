@@ -23,7 +23,6 @@
 
 <!-- Bootstrap core CSS -->
 <link href="<?php echo $this->baseUrl('css/bootstrap.min.css');?>" rel="stylesheet"/>
-<link href="<?php echo $this->baseUrl('css/bootstrap-theme.min.css');?>" rel="stylesheet"/>
 <link href="<?php echo $this->baseUrl('css/font-awesome.min.css');?>" rel="stylesheet"/>
 <link href="<?php echo $this->baseUrl('css/estilo.css');?>" rel="stylesheet"/>
 <link href="<?php echo $this->baseUrl('js/plugins/animate/animate.min.css');?>" rel="stylesheet"/>
@@ -40,7 +39,7 @@
     <!-- END HEAD -->
 
     <!-- BEGIN BODY -->
-    <body>
+    <body style="background: url('<?php echo $this->baseUrl('img/bgGeral.jpg');?>');">
           <!-- Static navbar -->
 			<nav role="navigation" class="navbar navbar-default">
 				<div class="container-fluid primary">
@@ -124,10 +123,15 @@
 		                  </li>
 						</ul>
 					</div>
-					<!-- /.navbar-collapse -->
+					
 				</div>
+				
 				<!-- /.container-fluid --> 
 			</nav>
+			<div>
+				<!-- /.navbar-collapse -->
+				<?php echo $this->layout()->content; ?>
+			</div>
     </body>
 
     <!-- END BODY -->
